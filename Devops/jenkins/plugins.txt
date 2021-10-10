@@ -1,0 +1,9 @@
+workflow-aggregator
+workflow-scm-step
+pipeline-npm
+pipeline-multibranch-defaults
+docker-workflow
+blueocean-pipeline-editor
+ssh-agent
+python:1.3
+shiningpanda:0.24
