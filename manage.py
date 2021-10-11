@@ -2,6 +2,8 @@
 import os
 import sys
 
+# prueba
+
 if __name__ == "__main__":
     os.environ.setdefault(
         "DJANGO_SETTINGS_MODULE", "personal_portfolio.settings"
