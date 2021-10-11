@@ -4,7 +4,7 @@ cd code
 while ! [ -f manage.py ]
 do
     echo "waiting for jenkins"
-    sleep 20
+    sleep 120
 done
 python manage.py makemigrations projects
 python manage.py migrate projects
