@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('lint') {
             steps {
-                sh 'python3 -m pylint --output-format=parseable --fail-under=0 . --msg-template="{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}" | tee pylint.log || echo "pylint exited with $?"'
+                sh "pylint manage.py"
+                //sh 'python3 -m pylint --output-format=parseable --fail-under=0 . --msg-template="{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}" | tee pylint.log || echo "pylint exited with $?"'
             }
         }
         stage('deploy') {
@@ -14,8 +15,6 @@ pipeline {
                 sh 'cp -r ./projects /deploy'
                 sh 'cp ./db.sqlite3 /deploy'
                 sh 'cp ./manage.py /deploy'
-
-    
             }
         }
         
