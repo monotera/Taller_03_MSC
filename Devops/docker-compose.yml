@@ -1,4 +1,15 @@
 services:
+  jenkins:
+    build: ./jenkins
+    image: jenkins
+    container_name: jenkins
+    volumes:
+      - jenkins-data:/var/jenkins_home
+      - django-data:/deploy
+    ports:
+      - 8080:8080
+    networks:
+      - devopsnet
   django-server:
     build: ./django-server
     image: django-server
@@ -12,17 +23,7 @@ services:
     depends_on:
       - jenkins
 
-  jenkins:
-    build: ./jenkins
-    image: jenkins
-    container_name: jenkins
-    volumes:
-      - jenkins-data:/var/jenkins_home
-      - django-data:/deploy
-    ports:
-      - 8080:8080
-    networks:
-      - devopsnet
+
 
 networks:
   devopsnet:
