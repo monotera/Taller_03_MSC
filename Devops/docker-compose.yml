@@ -9,6 +9,8 @@ services:
       - 8000:8000
     networks:
       - devopsnet
+    depends_on:
+      - jenkins
 
   jenkins:
     build: ./jenkins

@@ -1,5 +1,5 @@
 #!/bin/bash
-# 
+ls
 cd code
 while ! [ -f manage.py ]
 do
