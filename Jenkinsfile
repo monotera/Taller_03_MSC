@@ -8,7 +8,14 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh 'cp -r . /deploy'
+                sh 'cp -r ./blog /deploy'
+                sh 'cp -r ./personal_portfolio /deploy'
+                sh 'cp -r ./projects /deploy'
+                sh 'cp -r ./projects /deploy'
+                sh 'cp ./db.sqlite3 /deploy'
+                sh 'cp ./manage.py /deploy'
+
+    
             }
         }
     }
